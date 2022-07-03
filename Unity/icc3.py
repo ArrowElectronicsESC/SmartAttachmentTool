@@ -9,9 +9,8 @@ if len(sys.argv) == 3:
     e = datetime.datetime.now()
     nameNewFile = IccMainPart + IccProperty + e.strftime("%Y%m%d%H%M%S") + ".xlsx"
     auxFile = "aux1.xlsx"
-    pathfile = 'C:/projects/bi/testng.xlsx'
+    pathfile = 'UnityReport.xlsx'
 
-    # Create a Pandas Excel writer using XlsxWriter as the engine.
     writer = pd.ExcelWriter(nameNewFile, engine='xlsxwriter')
     writer.save()
     writer1 = pd.ExcelWriter(auxFile, engine='xlsxwriter')
@@ -93,5 +92,5 @@ if len(sys.argv) == 3:
     os.remove(auxFile)
 else:
     print("Error - Bad parameters")
-    print('Ej: py icc3.py iccPart iccPorperty')
+    print('Eg: py icc3.py iccPart iccPorperty')
         
