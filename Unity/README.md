@@ -56,3 +56,34 @@ email:
 e.g.:
 
 `Hentry.Jebasingam@arrow.com`
+
+# Send Email
+
+## Run script:
+```
+.\sendemail.ps1 Parameter1 Parameter2 Parameter3 Parameter4
+```
+Parameter1 = csv part suggestion
+
+Parameter2 = email
+
+Parameter3 = name
+
+Parameter4 = main part
+
+e.g.:
+```
+.\sendemail.ps1 ".\partsuggestion.csv" "fsr.fae@arrow.com" "Fsr Fae Name" "Bluetooth"
+```
+## Output:
+
+email (e.g.: sendemail.png)
+
+## Input:
+
+csv file
+
+e.g.:
+```
+partsuggestion.csv
+```
