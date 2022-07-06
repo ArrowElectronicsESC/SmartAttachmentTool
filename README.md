@@ -8,7 +8,10 @@ Python 3.8 or more needed
 # Dependencies:
 
 openpyxl
-PyQt5
+
+```
+pip install openpyxl
+```
 
 # Running the script
 
