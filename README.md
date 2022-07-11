@@ -16,7 +16,11 @@ pip install openpyxl
 # Running the script
 
 ```
-py smart_attachment_tool_GUI_V5.py [icc3.py script output file name]
+py icc3_smart_attachment_tool_V1.py Parameter1 Parameter2
 ```
+
+Parameter1 = Main Part
+
+Parameter2 = Property
 
 The script shall generate separate attachment files per each row from Unity report filtering script output.
