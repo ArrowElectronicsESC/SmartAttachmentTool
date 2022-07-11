@@ -23,4 +23,4 @@ Parameter1 = Main Part
 
 Parameter2 = Property
 
-The script shall generate separate attachment files per each row from Unity report filtering script output.
+The script shall generate separate attachment files per each row from Unity report filtering script output whenever an attachment can be suggested based on the information from the corresponding Selector Guide and Property dictionary
