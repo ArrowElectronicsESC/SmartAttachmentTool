@@ -47,11 +47,13 @@ Parameter1 = csv part suggestion
 
 Parameter2 = FAE/FSR Name
 
-Parameter3 = main part
+Parameter3 = year
+
+Parameter4 = Qx
 
 e.g.:
 ```
-py GetSendEmail.py ".\partsuggestion.csv" "Jebasingam, Hentry" "Bluetooth"
+py GetSendEmail.py ".\partsuggestion.csv" "Jebasingam, Hentry" "2022" "Q3"
 ```
 ## Output:
 

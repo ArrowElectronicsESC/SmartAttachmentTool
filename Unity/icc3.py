@@ -90,6 +90,9 @@ if len(sys.argv) == 3:
             index += 1
     writer1.handles.close()
     os.remove(auxFile)
+    df1 = pd.read_excel(nameNewFile)
+    df1.rename(columns = {'partyName':'Customer', 'boardsYr1':'Demand (Boards per year)', 'regProjectedYr1Rev':'Revenue', 'icc2Name':'Technology', 'supplier':'Supplier', 'supplierPartNumber':'PN', 'projectName':'Project'}, inplace = True)
+    df1.to_excel(nameNewFile,index=False)
 else:
     print("Error - Bad parameters")
     print('Eg: py icc3.py iccPart iccPorperty')

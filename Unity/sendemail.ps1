@@ -13,7 +13,11 @@ param(
 
     [Parameter(Mandatory=$True, Position=3, ValueFromPipeline=$false)]
     [System.String]
-    $Icc3MainPart
+    $YearQx,
+
+    [Parameter(Mandatory=$True, Position=4, ValueFromPipeline=$false)]
+    [System.String]
+    $YearR
 )
 
 #Parameters
@@ -23,7 +27,6 @@ $CSVPath  = $CsvPartSuggestion
 $EmailTo = $FaeFsrEmail
 #$EmailTo = "marcm@crescent.com", "victor@crescent.com"    or    @("marcm@crescent.com", "victor@crescent.com")
 $NameTo = $FsrFaeName
-$MainPart = $Icc3MainPart
    
 #Connect to PnP Online
 Connect-PnPOnline -Url $SiteURL -Interactive
@@ -55,14 +58,20 @@ tr:nth-child(even) { background-color: #e4dfec; }
 
 #HTML Template
 $EmailPreContent = @"
-<h2> Part Suggestion </h2>
 <p><b> Hi $NameTo </b></p>
-<p> Please review the part suggestion to the $MainPart part </p>
+<p>Nice to e-meet you, I hope this email finds you well. I am contacting you as part of the Artificial Intelligence ESC system. </p>
+<p>We are currently working on increase the number of registrations with attachments. Let me explain to you in more detail how this works: </p>
+<ul>
+<li>This information was pulled out from the DW Dashboard and corresponds to $YearQx of $YearR. </li>
+</ul>
+<p> Below you will find our recommendations: </p>
 "@
 
 $EmailPostContent = @"
-<p> Please do not respond to this email </p>
-<p> Regards </p>
+<p> I hope this information is relevant and can help you win more sockets with your actual customers.  I would love to circle back this information in case you or your customer would like to have a call to further talk about these solutions. <p>
+<p> Also, if you have any feedback or comments regarding this activity, please reply to this email. <p>
+<p> Thank you in advance for your attention, I am looking forward to work together. </p>
+<p> Best Regards, </p>
 <h2> ARROW </h2>
 <p><b> Five Years Out </b></p>
 "@
@@ -71,4 +80,4 @@ $EmailPostContent = @"
 $EmailBody = $CSVFile | ConvertTo-Html -Head $HeadTag -PreContent $EmailPreContent -PostContent $EmailPostContent | Out-String
  
 #Send Email
-Send-PnPMail -To $EmailTo -Subject "Part Suggestion" -Body $EmailBody #-From arrow@arrow.com -Password "password**"
+Send-PnPMail -To $EmailTo -Subject "Attachment Strategy - Product Proposal" -Body $EmailBody #-From "dcdcoordinator@arrow.com" -Password "password**"
