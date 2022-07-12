@@ -3,15 +3,15 @@ param(
     [System.String]
     $CsvPartSuggestion,
 
-    [Parameter(Mandatory=$True, Position=0, ValueFromPipeline=$false)]
+    [Parameter(Mandatory=$True, Position=1, ValueFromPipeline=$false)]
     [System.String]
     $FaeFsrEmail,
 
-    [Parameter(Mandatory=$True, Position=0, ValueFromPipeline=$false)]
+    [Parameter(Mandatory=$True, Position=2, ValueFromPipeline=$false)]
     [System.String]
     $FsrFaeName,
 
-    [Parameter(Mandatory=$True, Position=0, ValueFromPipeline=$false)]
+    [Parameter(Mandatory=$True, Position=3, ValueFromPipeline=$false)]
     [System.String]
     $Icc3MainPart
 )
@@ -19,8 +19,9 @@ param(
 #Parameters
 $SiteURL = "https://arrowelectronics.sharepoint.com/sites/DCDQuickChat"
 
-$CSVPath  = ".\test.csv"
-$EmailTo = $FaeFsrEmail #$EmailTo = "marcm@crescent.com", "victor@crescent.com"    or    @("marcm@crescent.com", "victor@crescent.com")
+$CSVPath  = $CsvPartSuggestion
+$EmailTo = $FaeFsrEmail
+#$EmailTo = "marcm@crescent.com", "victor@crescent.com"    or    @("marcm@crescent.com", "victor@crescent.com")
 $NameTo = $FsrFaeName
 $MainPart = $Icc3MainPart
    

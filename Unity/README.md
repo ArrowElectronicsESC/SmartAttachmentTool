@@ -37,43 +37,21 @@ excel file:
 
 `UnityReport.xlsx`
 
-# Get FSR and FAE Email
-
-## Run script:
-```
-py getArrowEmail.py Parameter1
-```
-Parameter1 = FAE (faeName column) or FSR (fsrName column) Name from `BluetoothAntenna20220703125230.xlsx` excel file
-
-e.g.:
-```
-py getArrowEmail.py "Jebasingam, Hentry"
-```
-## Output:
-
-email: 
-
-e.g.:
-
-`Hentry.Jebasingam@arrow.com`
-
 # Send Email
 
 ## Run script:
 ```
-.\sendemail.ps1 Parameter1 Parameter2 Parameter3 Parameter4
+py GetSendEmail.py Parameter1 Parameter2 Parameter3
 ```
 Parameter1 = csv part suggestion
 
-Parameter2 = email
+Parameter2 = FAE/FSR Name
 
-Parameter3 = name
-
-Parameter4 = main part
+Parameter3 = main part
 
 e.g.:
 ```
-.\sendemail.ps1 ".\partsuggestion.csv" "fsr.fae@arrow.com" "Fsr Fae Name" "Bluetooth"
+py GetSendEmail.py ".\partsuggestion.csv" "Jebasingam, Hentry" "Bluetooth"
 ```
 ## Output:
 
