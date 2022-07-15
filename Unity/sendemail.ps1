@@ -36,23 +36,23 @@ $CSVFile = Import-Csv $CSVPath
 
 #Define CSS Styles
 $HeadTag = @"
-<style type="text/css">
+<style>
 table {
- font-size:11px; color:#333333; border-width: 1px; border-color: #a9c6c9;
- border: b1a0c7 0.5pt solid; border-spacing: 1px; border-collapse: separate;  
+ font-size:11px; color:blue; border-width: 1px; border-color: #black;
+ border: DarkSlateGray 0.5pt solid; border-spacing: 1px; border-collapse: separate;  
 }
   
 th {
-border-width: 1px; padding: 5px; background-color:#8064a2; font-size: 14pt; font-weight: 600;
-border: #b1a0c7 0.5pt solid; font-family: Calibri; height: 15pt; color: white;
+border-width: 1px; padding: 5px; background-color: Silver; font-size: 14pt; font-weight: 600;
+border: DarkSlateGray 0.5pt solid; font-family: Calibri; height: 15pt; color: black;
 }
   
 td {
- border: #b1a0c7 0.5pt solid; font-family: Calibri; height: 15pt; color: black;
+ border: DarkSlateGray 0.5pt solid; font-family: Calibri; height: 15pt; color: black;
  font-size: 11pt; font-weight: 400; text-decoration: none; padding:5px; 
 }
   
-tr:nth-child(even) { background-color: #e4dfec; }
+tr:nth-child(even) { background-color: Snow; }
 </style>
 "@
 

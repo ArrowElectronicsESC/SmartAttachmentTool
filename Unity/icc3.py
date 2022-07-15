@@ -22,9 +22,11 @@ if len(sys.argv) == 3:
                'fiscalQtr','fiscalYear','metric','Note','topOpportunityFlag','DWB','BSV','icc2Name','icc3Name']
     
     df = pd.read_excel(pathfile)
+    df.rename(columns = {'partyName':'Customer', 'boardsYr1':'Demand (Boards per year)', 'regProjectedYr1Rev':'Revenue', 'icc2Name':'Technology', 'supplier':'Supplier', 'supplierPartNumber':'PN', 'projectName':'Project'}, inplace = True)
+    df.to_excel(pathfile,index=False)
     xl = pd.ExcelFile(pathfile)
     df.sort_values(by='Prototype Date')
-    projectName_change = df["projectName"].shift() != df["projectName"]
+    projectName_change = df["Project"].shift() != df["Project"]
     filesheet = xl.sheet_names
     infofile = xl.parse(filesheet[0])
     totalRows = infofile.shape[0] - 1
